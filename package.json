@@ -1,0 +1,27 @@
+{
+  "name": "news",
+  "version": "1.0.0",
+  "description": "Integrating API NYtimes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrbontor/news.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrbontor/news/issues"
+  },
+  "homepage": "https://github.com/mrbontor/news#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ini": "^1.3.5",
+    "minimist": "^1.2.5",
+    "needle": "^2.5.2",
+    "winston": "^3.3.3"
+  }
+}
