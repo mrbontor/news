@@ -96,7 +96,7 @@ async function searchEbook(req, res) {
         console.log(req);
         // if(typeof date )
 
-        let isRequestValid = await createRequest(body, 'article')
+        let isRequestValid = await createRequest(body, 'ebook')
         logging.debug(`[isRequestValid] >>>> TRUE =>FALSE || FALSE => TRUE ${JSON.stringify(isRequestValid)}`)
 
         if (isRequestValid.message){

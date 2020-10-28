@@ -47,14 +47,13 @@ params :null
 ```
 
 * *GET*    /api/ebook/search/:date?
->>> `this uri is used to search articles`
+>>> `this uri is used to search ebook hardcover fiction`
 
 ```
 params :
 {
     "date": "string",   | optional, by default is current
 }
-
 ```
 
 ### Prerequisites
@@ -72,7 +71,11 @@ What things you need to install the software and how to install them
 ```
 git clone
 npm install --save
-node index.js --config=/path/to/configs/file --logLevel=info
+node index.js --config=/path/to/configs/file --logLevel=info,
+
+or u can just input
+
+node index.js
 ```
 
 The default path for config file is `./configs/config.api.dev.ini`, you can explicitly add config file in `--config` or `-c` argument.
