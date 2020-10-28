@@ -6,7 +6,7 @@ const {genReff} = require('./utils')
 
 function apiRequest(method, url, data = {}, options={}){
     let config = iniParser.get()
-    let baseUrl = config.nytimes.url + url //+ '?api-key=' + config.nytimes.key
+    let baseUrl = config.nytimes.url + `${url}.json`
     let reff = genReff()
     logging.info(`[NYTIMES-API][REQ][OUT] REFF: ${reff} ${method} ${baseUrl} ${JSON.stringify(data)} ${JSON.stringify(options)}`)
     return new Promise(function(resolve, reject) {

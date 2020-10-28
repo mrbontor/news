@@ -1,0 +1,31 @@
+{
+    "title": "An object value",
+    "required": [],
+    "properties": {
+        "sort": {
+            "$id": "#/properties/sort",
+            "type": "string",
+            "title": "A string value",
+            "default": "newest",
+            "examples": [
+                "newest"
+            ],
+            "enum": ["newest", "oldest","relevance"],
+            "pattern": "^(.*)$"
+        },
+        "q": {
+            "title": "A string value",
+            "default": "",
+            "pattern": "^(.*)$",
+            "examples": [
+                "developer"
+            ],
+            "$id": "#/properties/q",
+            "type": "string"
+        }
+    },
+    "$id": "http://example.org/article.json#",
+    "type": "object",
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#"
+}

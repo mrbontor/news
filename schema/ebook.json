@@ -1,0 +1,20 @@
+{
+    "title": "An object value",
+    "required": [],
+    "properties": {
+        "date": {
+            "title": "A string value",
+            "default": "",
+            "examples": [
+                "developer"
+            ],
+            "$id": "#/properties/date",
+            "type": "string",
+            "pattern": "^\\(\\d{4}-\\d{2}-\\d{2}|current)$"
+        }
+    },
+    "$id": "http://example.org/ebook.json#",
+    "type": "object",
+    "definitions": {},
+    "$schema": "http://json-schema.org/draft-07/schema#"
+}
