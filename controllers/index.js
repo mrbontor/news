@@ -92,10 +92,20 @@ async function getListsEbook(req, res) {
 
 async function searchEbook(req, res) {
     try {
-        body.date = req.params.date || 'current/'
-        console.log(date);
+        body.date = req.params.date || 'current'
+        console.log(req);
         // if(typeof date )
-        let getData = await request('GET', EBOOK +'/'+ date + EBOOK_HARDCOVER_FICTION, body)
+
+        let isRequestValid = await createRequest(body, 'article')
+        logging.debug(`[isRequestValid] >>>> TRUE =>FALSE || FALSE => TRUE ${JSON.stringify(isRequestValid)}`)
+
+        if (isRequestValid.message){
+            // response.message = "sorting value should be equal to one of the allowed values"
+            response.message = isRequestValid.message.message
+            return res.status(BAD_REQUEST).send(response);
+        }
+
+        let getData = await request('GET', EBOOK +'/'+ body.date + EBOOK_HARDCOVER_FICTION, body)
         if (null === getData) return res.status(NOT_FOUND).send(response)
 
         if (typeof getData.status === undefined || getData.status !== 'OK') {
