@@ -20,7 +20,6 @@ const SUCCESS           = 200
 const BAD_REQUEST       = 400
 const ACCESS_FORBIDDEN  = 403
 const NOT_FOUND         = 404
-const INTERNAL_ERROR    = 500
 
 const ARTICLES = `/svc/search/v2/articlesearch`
 const EBOOK = `/svc/books/v3/lists`
@@ -93,14 +92,11 @@ async function getListsEbook(req, res) {
 async function searchEbook(req, res) {
     try {
         body.date = req.params.date || 'current'
-        console.log(req);
-        // if(typeof date )
-
+        
         let isRequestValid = await createRequest(body, 'ebook')
         logging.debug(`[isRequestValid] >>>> TRUE =>FALSE || FALSE => TRUE ${JSON.stringify(isRequestValid)}`)
 
         if (isRequestValid.message){
-            // response.message = "sorting value should be equal to one of the allowed values"
             response.message = isRequestValid.message.message
             return res.status(BAD_REQUEST).send(response);
         }
